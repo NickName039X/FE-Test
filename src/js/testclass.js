@@ -1,7 +1,7 @@
-class Dep {
+class Dep { //依赖收集器
     constructor() {
         this.subs = [];
-        this.name = 'huatian';
+        this.name = 'PEKING UNIVERSITY';
     }
 
 
