@@ -11,7 +11,10 @@
 <body>
     <div class="container container2">
         <div class="inline-block">#divA inline-block</div>
-        <div class="float"> #divB float:left</div>
+        <div class="float">
+            <div style="position: absolute;z-index:-6;background: cyan;width:40px;height:40px"></div>
+            <div style="position: absolute;z-index:-3;background: orange;width:40px;height:40px"></div>
+        </div>
     </div>
 
     <div class="container container2">
@@ -31,6 +34,7 @@
         width: 200px;
         height: 200px;
         opacity: 0.9;
+        /* opacity不为0形成 堆叠上下文 */
     }
     
     .float {
