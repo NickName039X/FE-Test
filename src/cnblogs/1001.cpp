@@ -11,7 +11,7 @@ int n, c, m, count = 1;
 scanf("%d ",&n);
 for(int l=0; l<n; l++)
 {
-memset(s1, '\0', sizeof(s1));
+memset(s1, '\0', sizeof(s1)); // \0 ASCII码为0的字符，对应null，一般用于数组结束符
 memset(s2, '\0', sizeof(s2));
 memset(s,0,sizeof(s));
 scanf("%s", s1);
