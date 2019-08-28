@@ -35,7 +35,7 @@ let ps = new PrimaryStudent({
 	grade:'yyyyy'
 });
 
-console.log(PrimaryStudent.prototype);
+console.log(ps.hello());
 
 // // 空函数F:
 // function F(props) {
