@@ -70,5 +70,15 @@
     // },2000);
 
 
+    //keys只遍历所有可枚举属性的键名
+    const o = {}
+    Object.defineProperty(o, 'a', { enumerable: true, value: 'aa' });
+    console.log(o);
+    function Func() {
+        console.log('==');
+    }
+    Object.keys(o).length && Func();
+
+
 
 </script>
