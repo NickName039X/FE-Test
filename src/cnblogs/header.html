@@ -2,25 +2,27 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Document</title>
 	<script src="../js/jquery.js"></script>
 </head>
 
 <body>
-<span class="portrait"></span>
-<a href="https://github.com/you"><img
-		width="149"
+	<span class="portrait"></span>
+	<a href="https://github.com/ft039x">
+		<img 
+		width="149" 
 		height="149"
-		src="https://github.blog/wp-content/uploads/2008/12/forkme_left_orange_ff7600.png?resize=149%2C149"
-		class="attachment-full size-full fork-github"
-		alt="Fork me on GitHub"
-		data-recalc-dims="1"
-></a>
-<div class="my-weather">天气</div>
-<div class="back-top">TOP</div>
+		src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149"
+		class="attachment-full size-full fork-github" 
+		alt="Fork me on GitHub" 
+		data-recalc-dims="1">
+	</a>
+	<iframe src="https://api.map.baidu.com/telematics/v3/weather?location=广州&output=jsonp&ak=pqsBze02FjAadRCPGstoW6Z4swIw4TOj"></iframe>
+	<div class="my-weather">天气</div>
+	<div class="back-top">TOP</div>
 </body>
 
 </html>
@@ -28,18 +30,18 @@
 	var url = 'https://api.map.baidu.com/telematics/v3/weather?location=广州&output=jsonp&ak=pqsBze02FjAadRCPGstoW6Z4swIw4TOj';
 	(function () {
 		var getLocalWeathers = $.ajax({
-				url : url,
-				type : "GET",
-				headers : {'Access-Control-Allow-Origin' : true},
-				contentType : "application/x-www-form-urlencoded",
-				dataType : 'jsonp',//预期服务器返回的类型
-				jsonp : "jsonpCallback",//服务端用于接收callback调用的function名的参数
-				success : function (data) {
-					console.log(data);
-				},
-				error : function () {
-				}
+			url: url,
+			type: "GET",
+			headers: { 'Access-Control-Allow-Origin': true },
+			contentType: "application/x-www-form-urlencoded",
+			dataType: 'jsonp',//预期服务器返回的类型
+			jsonp: "jsonpCallback",//服务端用于接收callback调用的function名的参数
+			success: function (data) {
+				console.log(data);
+			},
+			error: function () {
 			}
+		}
 			, true);
 	})();
 </script>
@@ -51,34 +53,34 @@
 	})();
 </script>
 <style>
+	.portrait {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		background-image: url("你的图片地址");
+		background-size: 100% 100%;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		transform-origin: center center;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-ms-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+	}
 
-.portrait {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-image: url("你的图片地址");
-    background-size: 100% 100%;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transform-origin: center center;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}
 	.fork-github {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 1;
 	}
-	
+
 	.my-weather {
 		position: fixed;
 		top: 20px;
@@ -93,7 +95,7 @@
 		border-radius: 8px;
 		color: #fff;
 	}
-	
+
 	.back-top {
 		position: fixed;
 		bottom: 20px;
