@@ -44,9 +44,8 @@
 					`<li><a href="http://www.bejson.com/knownjson/webInterface/" title="免费JSON">免费JSON</a></li>`
 				);
 
-			$("#profile_block")
-				.empty()
-				.append('<img src="https://pic.cnblogs.com/face/627518/20140424184721.png" class="my-avatar" alt="">');
+			// $("#blogTitle")
+			// 	.append('<img src="https://pic.cnblogs.com/face/627518/20140424184721.png" class="my-avatar" alt="">');
 		});
 	</script>
 
@@ -94,15 +93,6 @@
 
 		/* end */
 
-		#blogTitle h1 {
-			margin-left: 4em;
-		}
-
-		#blogTitle h2 {
-			margin-left: 4em;
-		}
-
-
 		.mybanner {
 			background-color: #6699cc;
 			color: #fff;
@@ -117,16 +107,28 @@
 			font-family: "Courier New", Courier, monospace;
 			font-size: 14px;
 			width: 100%;
-			text-align: center;
-			display: table;
 		}
 
-		#profile_block .my-avatar {
+
+		#blogTitle h1 {
+			margin-left: 4em;
+		}
+
+		#blogTitle h2 {
+			margin-left: 4em;
+		}
+
+		#blogTitle {
+			position: relative;
+		}
+
+		#blogTitle .my-avatar {
 			border-radius: 50%;
 			width: 68px;
 			height: 68px;
-			display: table-cell;
-			margin: 0 auto;
+			position: absolute;
+			top: calc(50% - 34px);
+			left: calc(50% - 34px);
 		}
 
 		/*hover头像时会滚动*/
