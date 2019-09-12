@@ -1,4 +1,4 @@
-let fs = require('fs');
+let fs = require('js/fs');
 
 const test = require('./path.js');
 console.log(test);

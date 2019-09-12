@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 // 异步读取
-fs.readFile('../assets/input.js', function (err, data) {
+fs.readFile('./assets/input.js', function (err, data) {
    if (err) {
        return console.error(err);
    }
