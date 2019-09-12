@@ -1,3 +1,4 @@
+// genatator语法
 function* helloWorldGenerator() {
     yield 'hello';
     yield 'world';
