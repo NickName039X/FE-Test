@@ -69,3 +69,4 @@ function* foo() {
 for (let v of foo()) {
     console.log(v);
 }
+
