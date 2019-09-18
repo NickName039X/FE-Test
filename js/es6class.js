@@ -55,7 +55,11 @@ p.speak();
     7.是class不是Class注意大小写
 
 
+
+    other
+    interface属于typescript范畴
     for...of循环调用遍历器
+
 
 
  */
