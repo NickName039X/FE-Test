@@ -42,6 +42,7 @@ p.speak();
 
 
 
+
 /* 
     总结：
     1.在class中定义的方法都是不可枚举的，而es5可以。
@@ -55,13 +56,10 @@ p.speak();
     7.是class不是Class注意大小写
 
 
-
     other
+
     interface属于typescript范畴
     for...of循环调用遍历器
-
-
-
  */
 
 

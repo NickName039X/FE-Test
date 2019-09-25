@@ -11,7 +11,40 @@
 <body>
 	<h1 class="mybanner">纸上得来终觉浅，绝知此事要躬行。</h1>
 
+
 	<script>
+		//js雪花特效
+		(function ($) {
+			$.fn.snow = function (options) {
+				var $flake = $('<div id="flake" />').css({ 'position': 'absolute', 'top': '-50px' }).html('&#10052;'),
+					documentHeight = $(document).height(),
+					documentWidth = $(document).width(),
+					defaults = { minSize: 10, maxSize: 20, newOn: 2000, flakeColor: "red" },
+					options = $.extend({}, defaults, options);
+				var interval = setInterval(function () {
+
+					var startPositionLeft = Math.random() * documentWidth - 100,
+						startOpacity = 0.5 + Math.random(),
+						sizeFlake = options.minSize + Math.random() * options.maxSize,
+						endPositionTop = documentHeight - 40,
+						endPositionLeft = startPositionLeft - 100 + Math.random() * 200,
+						durationFall = documentHeight * 10 + Math.random() * 5000;
+					$flake.clone().appendTo('body').css({
+						left: startPositionLeft,
+						opacity: startOpacity,
+						'font-size': sizeFlake,
+						color: options.flakeColor
+					}).animate({ top: endPositionTop, left: endPositionLeft, opacity: 0.6 },
+						durationFall, 'linear',
+						function () { $(this).remove() });
+
+				}, options.newOn);
+			};
+		})(jQuery);
+		$.fn.snow({ minSize: 10, maxSize: 50, newOn: 2000, flakeColor: '#ffffff' });
+
+
+
 		$(document).ready(function () {
 
 			$("#sidebar_shortcut ul").empty();
