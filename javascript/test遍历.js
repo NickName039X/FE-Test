@@ -28,7 +28,7 @@ for (let index in myObject) {
 // 结论：
 // 1. index索引为字符串型数字，不能直接进行几何运算
 // 2. 遍历顺序有可能不是按照实际数组的内部顺序
-// 3. 使用for in会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性 
+// 3. 使用for in会遍历数组所有的可枚举属性，包括原型。例如上面的原型方法method和name属性 
 
 console.log('\n');
 
