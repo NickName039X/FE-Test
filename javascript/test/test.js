@@ -3,6 +3,7 @@
 var cards = Array(62).fill().map((_, i) => {
     return i + 1;
 });
+console.log('cards:',cards)
 
 function draw(n = 1) { // 一次抽取 n 个，默认一次 1 个
     var ret = [];
@@ -12,10 +13,13 @@ function draw(n = 1) { // 一次抽取 n 个，默认一次 1 个
     }
     return ret;
 }
-console.log(draw(10)); //抽取一次，10个中奖者
+console.log('抽取10名中奖者：',draw(10)); //抽取一次，10个中奖者
+
+
+
 
 // 先洗牌
-function draw(amount, n = 1) {
+function draw2(amount, n = 1) {
     const cards = Array(amount).fill().map((_, i) => i + 1);
 
     for (let i = amount - 1; i >= 0; i--) {
@@ -24,11 +28,11 @@ function draw(amount, n = 1) {
     }
     return cards.slice(0, n);
 }
-console.log(draw(62, 10));
+console.log(draw2(62, 10));
 
 
 // es6的generate构造 更优雅的抽奖方式
-function* draw(amount) {
+function* draw3(amount) {
     const cards = Array(amount).fill().map((_, i) => i + 1);
 
     for (let i = amount - 1; i >= 0; i--) {
@@ -38,7 +42,7 @@ function* draw(amount) {
         yield cards[i];//取数
     }
 }
-var drawer = draw(62);
+var drawer = draw3(62);
 
 console.log(Array(10).fill().map(() => drawer.next().value)); //一次取出10个结果
 

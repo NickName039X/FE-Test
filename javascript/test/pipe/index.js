@@ -18,7 +18,8 @@ const pipe1 = function (...fns) {
     }
 }
 
-const res1 = pipe1(square, double, addOne)(3)
+const res1 = pipe1(square, double, addOne, square)
+console.log(res1(4))
 
 
 //
@@ -30,4 +31,6 @@ function test(...x) {//es6 不定参数
     console.log('arguments:=>', arguments);
     console.log(Object.prototype.toString.call(x));
 }
-// test(1, 2, 3);
+
+
+// test(1, 2, 3, 4);
