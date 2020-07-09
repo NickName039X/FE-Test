@@ -15,6 +15,7 @@ class Point {
     }
 }
 
+
 Object.assign(Point.prototype, {
     f1() { },
     f2() { },

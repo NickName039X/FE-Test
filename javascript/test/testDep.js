@@ -4,16 +4,14 @@ class Dep { //依赖收集器
         this.name = 'PEKING UNIVERSITY';
     }
 
-
-    
     addSub(sub) {
         this.subs.push(sub);
     }
-    
+
     depend() {
         Dep.taget && this.addSub(Dep.target);
     }
-    
+
     notify() {
         for (let sub of subs) {
             sub.update();
