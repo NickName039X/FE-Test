@@ -6,4 +6,7 @@ function* helloWorldGenerator() {
 }
 
 var hw = helloWorldGenerator(); 
+while(hw.next()){
+    console.log(hw.next().value)
+}
 
