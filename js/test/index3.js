@@ -1,17 +1,26 @@
-let obj = {}
-Object.defineProperty(obj, 'a', {
-    configurable: true,
-    enumerable: true,
-    get: () => {
-        console.log('get value by defineProperty')
-        return val
-    },
-    set: (newVal) => {
-        console.log('set value by defineProperty')
-        val = newVal
-    }
-})
 
+function defineReactive(obj){
+    Object.defineProperty(obj, 'a', {
+        configurable: true,
+        enumerable: true,
+        get: () => {
+            console.log('get value by defineProperty')
+            return val
+        },
+        set: (newVal) => {
+            console.log('set中this指向：',this);
+            console.log('set value by defineProperty')
+            val = newVal
+        }
+    })
+}
+let obj = {};
+let o = {
+    test:function test(){
+        defineReactive(obj);
+    }
+}
+o.test(obj)
 obj.a = [] // set value by defineProperty
 obj.a.push('1') // get value by defineProperty
 // obj.a[0] = 1 // get value by defineProperty
