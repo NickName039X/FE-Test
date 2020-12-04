@@ -1,4 +1,4 @@
-let privateProps = new WeakMap();
+let privateProps = new WeakMap();//
 class Point {
     constructor(x, y) {
         this.x = x;
